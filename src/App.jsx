@@ -17,17 +17,36 @@ function AppContent() {
         background: theme === "light" ? "#f5f5f5" : "#222",
         color: theme === "light" ? "#222" : "#f5f5f5",
         transition: "0.2s",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
       }}
     >
-      <h1>TodoApp med ThemeSwitcher</h1>
+      <div
+        style={{
+          width: "100%",
+          maxWidth: "600px",
+          background: theme === "light" ? "#fff" : "#333",
+          padding: "2rem",
+          borderRadius: "8px",
+          boxShadow:
+            theme === "light"
+              ? "0 2px 8px rgba(0, 0, 0, 0.1)"
+              : "0 2px 8px rgba(0, 0, 0, 0.5)",
+          transition: "0.2s",
+        }}
+      >
+        <ThemeSwitcher />
 
-      <ThemeSwitcher />
+        <h1>Get shit done</h1>
+        <h2>Making life easier</h2>
 
-      <hr style={{ margin: "1rem 0" }} />
+        <hr style={{ margin: "1rem 0" }} />
 
-      <AddTodo />
-      <TodoList />
-      <TodoStats />
+        <AddTodo />
+        <TodoList />
+        <TodoStats />
+      </div>
     </div>
   );
 }
